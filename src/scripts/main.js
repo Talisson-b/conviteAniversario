@@ -14,6 +14,10 @@ const contaAsHoras = setInterval(function(){
     const minutos = Math.floor((distanciaAteOEvento % (1000 * 60 *60)) / (1000 * 60))
     const segundos = Math.floor((distanciaAteOEvento % (1000 * 60) ) / 1000)
     
-
-    document.getElementById('dataAniversario').innerHTML =  `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    if(horas == 0) {
+        document.getElementById('dataAniversario').innerHTML =  `${dias}d ${minutos}m ${segundos}s`;
+    } else {
+        document.getElementById('dataAniversario').innerHTML =  `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+    
 },1000)
